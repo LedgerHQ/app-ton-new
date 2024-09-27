@@ -51,7 +51,7 @@ void swap_handle_check_address(check_address_parameters_t *params) {
     PRINTF("Public key %.*H\n", 32, pk_info.raw_public_key);
 
     char address_base64url[48];
-    if (base64_to_base64url(params->address_to_check, 48, address_base64url, 48) > 0) {
+    if (base64_to_base64url(params->address_to_check, 48, address_base64url, 48) < 0) {
         PRINTF("Failed to convert to base64url\n");
         return;
     }
